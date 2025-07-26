@@ -57,6 +57,8 @@
                             <form class="row g-1 p-3 p-md-4" action="{{route('register')}}" method="post">
                                 @csrf
                                 <div class="col-12 text-center mb-5">
+                                    <img width="200"  src="clini.jpg" alt="Image Description">
+                                    <hr/>
                                     <h4>Create your account</h4>
                                     <span>Free access to our dashboard.</span>
                                 </div>
