@@ -5,7 +5,7 @@
         <div class="row align-items-center">
             <div class="border-0 mb-4">
                 <div class="card-header py-3 no-bg bg-transparent d-flex align-items-center px-0 justify-content-between border-bottom flex-wrap">
-                    <h3 class="fw-bold mb-0">Labs Reports</h3>
+                    <h3 class="fw-bold mb-0">OPTHALMIC PROCEDURES</h3>
                     <div class="col-auto d-flex">
                         <div class="dropdown ">
                             <button class="btn btn-primary dropdown-toggle  " type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
@@ -43,141 +43,46 @@
         </div><!-- Row end  -->
 
         <div class="row align-items-center row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-3 row-cols-xxl-4 g-3">
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <span class="text-muted">Sodium</span>
-                            <span class="text-muted">{{ $report->sodium ?? 'N/A' }} mma/L</span>
+
+            @php
+                $reportFields = [
+                    ['label' => 'DVA Unaided Right', 'key' => 'dva_unaided_right'],
+                    ['label' => 'DVA Unaided Left', 'key' => 'dva_unaided_left'],
+                    ['label' => 'DVA Aided Right', 'key' => 'dva_aided_right'],
+                    ['label' => 'DVA Aided Left', 'key' => 'dva_aided_left'],
+                    ['label' => 'DVA with PINHole Right', 'key' => 'dva_with_pinhole_right'],
+                    ['label' => 'DVA with PINHole Left', 'key' => 'dva_with_pinhole_left'],
+                    ['label' => 'NVA Unaided Right', 'key' => 'nva_unaided_right'],
+                    ['label' => 'NVA Unaided Left', 'key' => 'nva_unaided_left'],
+                    ['label' => 'NVA Aided Right', 'key' => 'nva_aided_right'],
+                    ['label' => 'NVA Aided Left', 'key' => 'nva_aided_left'],
+                    ['label' => 'Tonometry Right', 'key' => 'tonometry_right'],
+                    ['label' => 'Tonometry Left', 'key' => 'tonometry_left'],
+                    ['label' => 'Ginoscopy Right', 'key' => 'ginoscopy_right'],
+                    ['label' => 'Ginoscopy Left', 'key' => 'ginoscopy_left'],
+                    ['label' => 'VFA Right', 'key' => 'vfa_right'],
+                    ['label' => 'VFA Left', 'key' => 'vfa_left'],
+                    ['label' => 'CVF Right', 'key' => 'cvf_right'],
+                    ['label' => 'CVF Left', 'key' => 'cvf_left'],
+                ];
+            @endphp
+
+            @foreach ($reportFields as $index => $field)
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <span class="text-muted">{{ $field['label'] }}</span>
+                                <span class="text-muted">{{ $report->{$field['key']} ?? 'N/A' }}</span>
+                            </div>
+                            <div id="apexspark-chart{{ $index + 1 }}"></div>
                         </div>
-                        <div id="apexspark-chart1"></div>
                     </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <span class="text-muted">Potassium</span>
-                            <span class="text-muted">{{ $report->potassium ?? 'N/A' }} mma/L</span>
-                        </div>
-                        <div id="apexspark-chart2"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <span class="text-muted">Glucose</span>
-                            <span class="text-muted">{{ $report->glucose ?? 'N/A' }} mg/dl</span>
-                        </div>
-                        <div id="apexspark-chart3"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <span class="text-muted">Calcium</span>
-                            <span class="text-muted">{{ $report->calcium ?? 'N/A' }} mg/dL</span>
-                        </div>
-                        <div id="apexspark-chart4"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <span class="text-muted">Phophatase</span>
-                            <span class="text-muted">{{ $report->phosphatase ?? 'N/A' }} IU/L</span>
-                        </div>
-                        <div id="apexspark-chart5"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <span class="text-muted">Bicarbonate</span>
-                            <span class="text-muted">{{ $report->bicarbonate ?? 'N/A' }} mma/L</span>
-                        </div>
-                        <div id="apexspark-chart6"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <span class="text-muted">Cholesterol</span>
-                            <span class="text-muted">{{ $report->cholesterol ?? 'N/A' }} mg/L</span>
-                        </div>
-                        <div id="apexspark-chart7"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <span class="text-muted">Triglycerides</span>
-                            <span class="text-muted">{{ $report->triglycerides ?? 'N/A' }} mma/L</span>
-                        </div>
-                        <div id="apexspark-chart8"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <span class="text-muted">White Blood Cell</span>
-                            <span class="text-muted">{{ $report->white_blood_cell ?? 'N/A' }} k/UL</span>
-                        </div>
-                        <div id="apexspark-chart9"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <span class="text-muted">Hemoglobin</span>
-                            <span class="text-muted">{{ $report->hemoglobin ?? 'N/A' }} mma/L</span>
-                        </div>
-                        <div id="apexspark-chart10"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <span class="text-muted">Cretinism</span>
-                            <span class="text-muted">{{ $report->cretinism ?? 'N/A' }} mma/L</span>
-                        </div>
-                        <div id="apexspark-chart11"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <span class="text-muted">Thyroid</span>
-                            <span class="text-muted">{{ $report->thyroid ?? 'N/A' }} uq/DL</span>
-                        </div>
-                        <div id="apexspark-chart12"></div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+
         </div>
     </div>
-
     <div class="modal fade" id="sendfile" tabindex="-1"  aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-md modal-dialog-scrollable">
             <div class="modal-content">
@@ -198,7 +103,6 @@
             </div>
         </div>
     </div>
-
     @push('scripts')
         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
         <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>

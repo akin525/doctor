@@ -61,7 +61,7 @@
                     </ul>
                 </li>
 {{--                <li><a class="m-link" href="accidents.html"><i class="icofont-stretcher fs-5"></i> <span>Accidents</span></a></li>--}}
-                <li><a class="m-link" href="{{route('lab.report.index')}}"><i class="icofont-blood-test fs-5"></i> <span>Labs</span></a></li>
+                <li><a class="m-link" href="{{route('lab.report.index')}}"><i class="icofont-blood-test fs-5"></i> <span>OPTHALMIC PROCEDURES</span></a></li>
                 <li>
                     <a class="m-link" href="{{ route('departments') }}">
                         <i class="icofont-hospital fs-5"></i> <span>Department</span>

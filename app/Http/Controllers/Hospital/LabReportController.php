@@ -23,20 +23,29 @@ class LabReportController extends Controller
 
         // Sample fallback structure if no report exists
         $defaultReport = [
-            'sodium' => 140,
-            'potassium' => 140,
-            'glucose' => 84,
-            'calcium' => 9.5,
-            'phosphatase' => 66,
-            'bicarbonate' => 31,
-            'cholesterol' => 240,
-            'triglycerides' => 140,
-            'white_blood_cell' => 5.3,
-            'hemoglobin' => 140,
-            'cretinism' => 1.8,
-            'thyroid' => 6.3,
-            'full_body_before' => [82, 23, 67, 59],
-            'full_body_after' => [0, 0, 0, 0],
+            'dva_unaided_right' => '6/18',
+            'dva_unaided_left' => '6/24',
+            'dva_aided_right' => '6/6',
+            'dva_aided_left' => '6/9',
+            'dva_with_pinhole_right' => '6/12',
+            'dva_with_pinhole_left' => '6/18',
+
+            'nva_unaided_right' => 'N8',
+            'nva_unaided_left' => 'N10',
+            'nva_aided_right' => 'N6',
+            'nva_aided_left' => 'N6',
+
+            'tonometry_right' => '15 mmHg',
+            'tonometry_left' => '16 mmHg',
+
+            'ginoscopy_right' => 'Open angle',
+            'ginoscopy_left' => 'Narrow angle',
+
+            'vfa_right' => 'Full field',
+            'vfa_left' => 'Mild superior defect',
+
+            'cvf_right' => 'Normal',
+            'cvf_left' => 'Reduced inferior quadrant',
         ];
 
         return view('hospital.doctors.lab', [
