@@ -102,11 +102,13 @@ class EyeReportController extends Controller
 
         $report = EyeReport::create($data);
 
-        return response()->json([
-            'status' => true,
-            'message' => 'Eye report created successfully',
-            'data' => $report
-        ], 201);
+        return redirect()->route('hospital.doctors.eye-reports')->with('success', 'Eye report created successfully.');
+
+//        return response()->json([
+//            'status' => true,
+//            'message' => 'Eye report created successfully',
+//            'data' => $report
+//        ], 201);
     }
 
     public function show(EyeReport $eyeReport)
