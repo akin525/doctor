@@ -58,6 +58,7 @@
                     <ul class="sub-menu collapse" id="menu-Patient">
                         <li><a class="ms-link" href="{{route('patients')}}">Patient List</a></li>
                         <li><a class="ms-link" href="{{route('patients.create')}}">Add Patient</a></li>
+                        <li><a class="ms-link" href="{{route('eye-reports.create')}}">Add Eye Patient</a></li>
                     </ul>
                 </li>
 {{--                <li><a class="m-link" href="accidents.html"><i class="icofont-stretcher fs-5"></i> <span>Accidents</span></a></li>--}}

@@ -6,6 +6,7 @@ use App\Http\Controllers\Hospital\BedController;
 use App\Http\Controllers\Hospital\BillingController;
 use App\Http\Controllers\Hospital\DepartmentController;
 use App\Http\Controllers\Hospital\DoctorController;
+use App\Http\Controllers\Hospital\EyeReportController;
 use App\Http\Controllers\Hospital\LabReportController;
 use App\Http\Controllers\Hospital\MedicalRecordController;
 use App\Http\Controllers\Hospital\PatientController;
@@ -26,6 +27,8 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 
 
 Route::middleware('auth')->group(function () {
+    Route::get('/eye-reports', [EyeReportController::class, 'create'])->name('eye-reports.create');
+    Route::post('/eye-reports', [EyeReportController::class, 'store'])->name('eye-reports.store');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
